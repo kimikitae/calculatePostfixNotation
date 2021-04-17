@@ -71,20 +71,17 @@ int eval(char exp[]){
         //ch가 수라면
         if (isdigit(ch)){
             if (is_empty(&s)) push(&s,(ch - '0'));
-            else {
-                value = pop(&s) * 10 + (ch - '0');
-                push(&s, value);
-            }
+            else push(&s, pop(&s) * 10 + (ch - '0'));
         }
         //ch가 공백이라면
-        else if (isspace(ch)) push(&s, 0) ;
+        else if (isspace(ch)) push(&s, '\0');
         //ch가 연산자라면
         else {
-            while (peek(&s) == 0) {
+            while (peek(&s) == '\0') {
                 pop(&s);
             }op2 = pop(&s);
             
-            while (peek(&s) == 0) {
+            while (peek(&s) == '\0') {
                 pop(&s);
             }op1 = pop(&s);
 
@@ -101,11 +98,11 @@ int eval(char exp[]){
                 case '/': 
                     push(&s, op1 / op2);
                     break;
-            }push(&s, 0);
+            }push(&s, '\0');
         }
     }
-    while (peek(&s) == 0) {
-                pop(&s);
+    while (peek(&s) == '\0') {
+        pop(&s);
     }
     return pop(&s);
 }
