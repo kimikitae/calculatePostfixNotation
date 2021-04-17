@@ -1,3 +1,4 @@
+// If the operand is 0, there is a bug that cannot be calculated, but I want to fix it.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
