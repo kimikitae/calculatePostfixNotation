@@ -5,4 +5,4 @@ calculate postfix notation with stack(ADT)
   ** ㅈㅂㅈㅂㄸ
 * ㅁㄴㅇ
 
-*** ㅇㅁㄴㅇㅇㄴㅁ
+* ㅇㅁㄴㅇㅇㄴㅁ
